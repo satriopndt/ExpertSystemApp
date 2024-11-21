@@ -24,6 +24,6 @@ val GraySec = Color(0xFF5a5d72) //secondary
 val BlueDarkScheme = Color(0xFFb7c4ff) // primary (DarkScheme)
 val GraySecDark = Color(0xFFc2c5dd)// secondary
 
-//val LightColor = Color(0xff6200EE)
-//val DarkColor = Color(0xff3700B3 )
+val LightColor = Color(0xff6200EE)
+val DarkColor = Color(0xff3700B3 )
 

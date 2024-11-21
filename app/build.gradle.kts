@@ -93,6 +93,9 @@ dependencies {
 //    ksp("androidx.room:room-compiler:2.6.0")
     implementation (libs.androidx.room.runtime)
 
+    //navigation
+    implementation (libs.androidx.navigation.compose)
+
 
     implementation(libs.androidx.compose.bom)
     implementation (libs.androidx.navigation.compose)
@@ -101,6 +104,8 @@ dependencies {
     implementation(libs.androidx.material.icons.extended)
     implementation(libs.androidx.material)
     implementation (libs.androidx.foundation)
+
+    implementation (libs.material3)
 
 
 

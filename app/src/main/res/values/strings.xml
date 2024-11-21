@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ExpertSystem</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_profile">Profile</string>
+    <string name="menu_researcher">Researcher</string>
+    <string name="menu_post">Post</string>
 </resources>

@@ -4,5 +4,5 @@ data class UserModel(
     var userId: String,
     var name: String,
     var token: String,
-    var isLogin: Boolean = false
+    var isLogin: Boolean
 )

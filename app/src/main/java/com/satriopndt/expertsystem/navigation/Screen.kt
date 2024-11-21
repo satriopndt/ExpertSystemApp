@@ -2,7 +2,7 @@ package com.satriopndt.expertsystem.navigation
 
 sealed class Screen(val route: String) {
     object Splash : Screen("splash")
-    object Login : Screen("Login")
+    object Login : Screen("login")
     object Home : Screen("home")
     object Posting : Screen("posting")
     object Research : Screen("research")
