@@ -5,7 +5,6 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import com.satriopndt.expertsystem.data.model.ResearchModel
 import com.satriopndt.expertsystem.data.repository.SystemRepository
-import com.satriopndt.expertsystem.ui.common.UiState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 
@@ -23,12 +22,13 @@ class HomeViewModel(private val repository: SystemRepository): ViewModel() {
     val groupPosting: StateFlow<Map<Char, List<ResearchModel>>> get() = _groupPosting
 
     private val _query = mutableStateOf("")
-    val query: State<String>get() = _query
+
+    val query: State<String> get() = _query
 
     fun search(newQuery: String){
         _query.value = newQuery
         _groupPosting.value = repository.searchRiset(_query.value)
-            .sortedBy { it.name }
+            .sortedBy { it.name}
             .groupBy { it.name[0] }
     }
 

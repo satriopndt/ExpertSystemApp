@@ -7,6 +7,7 @@ sealed class Screen(val route: String) {
     object Posting : Screen("posting")
     object Research : Screen("research")
     object Profile: Screen("profile")
+    object Notification: Screen("notification")
 
     companion object{
         val useBottombar = listOf(

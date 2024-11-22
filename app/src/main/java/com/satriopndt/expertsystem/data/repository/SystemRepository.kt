@@ -60,7 +60,7 @@ class SystemRepository(
 
     fun searchRiset(query: String): List<ResearchModel> {
         return FakeDataResearchPost.dummyResearch.filter {
-            it.name.contains(query, ignoreCase = false)
+            it.name.contains(query, ignoreCase = true)
         }
     }
 
