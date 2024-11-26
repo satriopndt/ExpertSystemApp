@@ -1,15 +1,39 @@
 package com.satriopndt.expertsystem.ui.screen.profile
 
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavController
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 
 @Composable
-fun ProfileScreen(){
+fun ProfileScreen(
+    modifier: Modifier = Modifier,
+    navController: NavHostController
+) {
 
+    Column(modifier = modifier.fillMaxSize()) {
+
+        Box(
+            modifier = Modifier
+                .padding()
+                .fillMaxSize(),
+            contentAlignment = Alignment.Center
+        ) {
+            Text("Coming soon")
+        }
+    }
 }
 
-@Preview
+@Preview(showBackground = true)
 @Composable
-fun ProfileScreenPreview(){
-    ProfileScreen()
+fun ProfileScreenPreview() {
+    ProfileScreen(navController = rememberNavController())
 }

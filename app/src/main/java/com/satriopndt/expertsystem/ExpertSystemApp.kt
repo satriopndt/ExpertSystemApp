@@ -16,7 +16,7 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.satriopndt.expertsystem.navigation.Screen
 import com.satriopndt.expertsystem.ui.component.BottomBar
-import com.satriopndt.expertsystem.ui.screen.add.PostingScreen
+import com.satriopndt.expertsystem.ui.screen.posting.PostingScreen
 import com.satriopndt.expertsystem.ui.screen.home.HomeScreen
 import com.satriopndt.expertsystem.ui.screen.login.LoginScreen
 import com.satriopndt.expertsystem.ui.screen.profile.ProfileScreen
@@ -61,13 +61,13 @@ fun ExpertSystemApp(
                 HomeScreen(navController =navController)
             }
             composable(Screen.Posting.route) {
-                PostingScreen()
+                PostingScreen(navController = navController)
             }
             composable(Screen.Research.route) {
-                ResearchScreen()
+                ResearchScreen(navController = navController)
             }
             composable(Screen.Profile.route) {
-                ProfileScreen()
+                ProfileScreen(navController = navController)
             }
         }
 

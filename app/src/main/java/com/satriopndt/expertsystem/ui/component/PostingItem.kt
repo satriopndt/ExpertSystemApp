@@ -10,12 +10,15 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.MaterialTheme.colors
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material.icons.filled.InsertComment
 import androidx.compose.material.icons.filled.Message
 import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -24,6 +27,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
@@ -41,30 +45,51 @@ fun PostingItem(
     modifier: Modifier = Modifier
 ) {
 
-    Column(modifier = modifier
-        .background(Color.White)
-        .fillMaxWidth()) {
+    Card(
+        colors = CardDefaults.cardColors(
+            containerColor = Color.White,
+        ),
+        modifier = modifier
+            .fillMaxWidth()
+            .clip(RoundedCornerShape(15.dp))
+            .shadow(elevation = 30.dp, shape = RoundedCornerShape(12.dp), clip = true),
+    ) {
 
-        Text(text = username, maxLines = 1, style = MaterialTheme.typography.titleSmall)
-        Image(
-            painter = painterResource(image), contentDescription = "",
-            contentScale = ContentScale.FillBounds,
-            modifier = modifier
-                .size(500.dp)
+        Column(modifier = modifier.padding(8.dp)) {
+            Text(text = username, maxLines = 1, style = MaterialTheme.typography.titleSmall)
 
-        )
-        Row(
-            modifier = modifier
-                .height(28.dp)
-                .padding(4.dp)
-        ) {
-            Icon(painter = painterResource(id = R.drawable.baseline_favorite_border_24), contentDescription = null )
-            Spacer(modifier = modifier.padding(8.dp))
-            Icon(painter = painterResource(id = R.drawable.baseline_comment_24), contentDescription = null)
+            //Spacer(modifier = modifier.padding(8.dp))
+
+            Image(
+                painter = painterResource(image), contentDescription = "",
+                contentScale = ContentScale.FillBounds,
+                modifier = modifier
+                    .size(500.dp)
+
+            )
+            Row(
+                modifier = modifier
+                    .height(28.dp)
+                    .padding(4.dp)
+            ) {
+                Icon(
+                    painter = painterResource(id = R.drawable.baseline_favorite_border_24),
+                    contentDescription = null
+                )
+                Spacer(modifier = modifier.padding(8.dp))
+                Icon(
+                    painter = painterResource(id = R.drawable.baseline_comment_24),
+                    contentDescription = null
+                )
+            }
+            Text(text = category, maxLines = 1, style = MaterialTheme.typography.bodySmall)
+            Text(text = description, maxLines = 4, style = MaterialTheme.typography.bodySmall)
         }
-        Text(text = category, maxLines = 1, style = MaterialTheme.typography.bodySmall)
-        Text(text = description, maxLines = 4, style = MaterialTheme.typography.bodySmall)
+
+
+
     }
+
 
 }
 

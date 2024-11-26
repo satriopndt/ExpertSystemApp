@@ -68,7 +68,7 @@ fun HomeScreen(
             .background
                 (
                 brush = Brush.verticalGradient(
-                    colors = listOf(BluePekat, BiruDongker),
+                    colors = listOf(Color.White, BluePekat, BiruDongker),
                     startY = 70f
                 )
             )
@@ -103,8 +103,8 @@ fun HomeScreen(
         }
         LazyColumn(
             contentPadding = PaddingValues(16.dp),
-
             ) {
+
             groupPosting.forEach { _, posting ->
                 items(posting) {
                     PostingItem(
@@ -113,6 +113,7 @@ fun HomeScreen(
                         category = it.category,
                         description = it.description
                     )
+                    Spacer(modifier = modifier.height(8.dp))
                 }
             }
         }
